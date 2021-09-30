@@ -1,9 +1,10 @@
 import numpy as np
-from gl import V3
+from gl import OPAQUE2, V3
 
 OPAQUE = 0
 REFLECTIVE = 1
 TRANSPARENT = 2
+OPAQUE2 = 3
 
 WHITE = (1,1,1)
 

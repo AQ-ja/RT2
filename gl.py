@@ -9,6 +9,7 @@ import random
 OPAQUE = 0
 REFLECTIVE = 1
 TRANSPARENT = 2
+OPAQUE2 = 3
 
 MAX_RECURSION_DEPTH = 3
 
@@ -337,7 +338,11 @@ class Raytracer(object):
 
 
         if material.matType == OPAQUE:
+            finalColor = pLightColor + ambientColor + dirLightColor - finalSpecColor
+
+        if material.matType == OPAQUE2:
             finalColor = pLightColor + ambientColor + dirLightColor + finalSpecColor
+            
 
         elif material.matType == REFLECTIVE:
             reflect = reflectVector(intersect.normal, np.array(dir) * -1)
